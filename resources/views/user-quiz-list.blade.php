@@ -16,7 +16,7 @@
 
 <body>
 
-  <x-navbar :email="$email" />
+  <x-user-navbar></x-user-navbar>
 
   <div class="flex flex-col min-h-screen items-center py-10 px-4">
 
@@ -25,7 +25,7 @@
       <h1 class="text-3xl font-extrabold text-blue-800 drop-shadow-lg">
         Category: {{ $category }}
       </h1>
-      <a href="/add-quiz" 
+      <a href="/" 
          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md transition flex items-center gap-2">
         <i class="fa fa-arrow-left"></i> Back
       </a>
@@ -48,24 +48,19 @@
         </li>
 
         <!-- Data Rows -->
-        @foreach ($quizdata as $item)
+        @foreach ($quizdata as $key=> $item)
         <li class="hover:bg-blue-100 transition">
           <ul class="flex justify-between text-center py-3 px-4 border-t border-gray-200">
-            <li class="w-1/6 flex items-center justify-center font-medium">{{ $item->id }}</li>
+            <li class="w-1/6 flex items-center justify-center font-medium">{{$key+1}}</</li>
             <li class="w-3/6 flex items-center justify-center">{{ $item->name }}</li>
             <li class="w-1/6 flex items-center justify-center">
-              <a href="{{ route('show.quiz', [$item->id, $item->name]) }}" 
-                 class="bg-green-500 hover:bg-green-600 text-white p-2 rounded-full shadow-md transition">
-                <i class="fa-solid fa-eye"></i>
-              </a>
+             <a href="/start-quiz/{{$item->id}}/{{$item->name}}'," class="text-blue-500 font-bold">Attempt Quiz</a>
             </li>
           </ul>
         </li>
         @endforeach
       </ul>
     </div>
-
-    <p class="text-center mt-6 text-gray-600">&copy; 2025 Admin Portal</p>
   </div>
 
 </body>

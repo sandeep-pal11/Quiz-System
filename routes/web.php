@@ -2,13 +2,9 @@
 
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\UserController;
 
 Route::view('admin-login', 'admin-login');
-
 Route::post('admin-login', [AdminController::class,'login']);
 Route::get('dashboard', [AdminController::class,'dashboard']);
 Route::get('admin-categories', [AdminController::class,'categories']);
@@ -20,3 +16,8 @@ Route::Post('add-mcq', [AdminController::class,'addmcqs']);
 Route::get('end-quiz', [AdminController::class,'endquiz']);
 Route::get('show-quiz/{id}/{quizName}', [AdminController::class, 'showquiz'])->name('show.quiz');
 Route::get('quiz-list/{id}/{category}', [AdminController::class,'quizlist']);
+
+
+Route::get('/', [UserController::class,'welcome']);
+Route::get('/user-quiz-list/{id}/{category}', [UserController::class,'userquizlist']);
+Route::get('/start-quiz/{id}/{name}', [UserController::class,'startquiz']);

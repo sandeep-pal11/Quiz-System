@@ -8,56 +8,77 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    body {
-      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-      font-family: 'Segoe UI', sans-serif;
-    }
+ <style>
+  body {
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    font-family: 'Segoe UI', sans-serif;
+  }
 
-    .card {
-      border-radius: 1rem;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
+  .card {
+    border-radius: 1rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
 
-    .form-control {
-      border-radius: 0.5rem;
-    }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
 
-    .btn-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #0d6efd;
-      color: white;
-      padding: 6px 14px;
-      border-radius: 0.5rem;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
+  .form-control {
+    border-radius: 0.5rem;
+  }
 
-    .btn-back:hover {
-      background: #084298;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      text-decoration: none;
-      color: white;
-    }
+  /* Back Button */
+  .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(90deg, #0d6efd, #4a8dfd);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
 
-    .table-header {
-      background: rgba(0, 0, 0, 0.05);
-      border-radius: 0.3rem;
-      font-weight: 600;
-    }
+  .btn-back:hover {
+    background: linear-gradient(90deg, #084298, #2e6de6);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    color: white;
+  }
 
-    .mcq-row {
-      transition: background 0.3s ease;
-    }
+  /* Table Header */
+  .table-header {
+    background: linear-gradient(90deg, #f0f4ff, #dbe7ff);
+    border-radius: 0.3rem;
+    font-weight: 600;
+    color: #0d6efd;
+  }
 
-    .mcq-row:hover {
-      background: rgba(13, 110, 253, 0.1);
-    }
-  </style>
+  /* Table Rows */
+  .mcq-row {
+    transition: background 0.3s ease, transform 0.15s ease;
+    background: white;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .mcq-row:hover {
+    background: rgba(13, 110, 253, 0.08);
+    transform: scale(1.01);
+  }
+
+  /* Footer */
+  .footer-text {
+    font-size: 0.85rem;
+    color: rgba(0, 0, 0, 0.6);
+  }
+</style>
+
 </head>
 
 <body class="bg-gray-100">
