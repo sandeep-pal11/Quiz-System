@@ -15,7 +15,7 @@ class UserController extends Controller
     }
 
     function userquizlist($id,$category){
-        $quizdata = Quiz::where('category_id', $id)->get();
+        $quizdata = Quiz::withCount('Mcq')-> where('category_id', $id)->get();
         return view('user-quiz-list', [
             "quizdata" => $quizdata,
             "category" => $category
@@ -29,4 +29,13 @@ class UserController extends Controller
         "quizname"=>$quizname
     ]);
   }
+         public function usersignup(Request $request)
+            {
+          $request->validate([
+        'username' => 'required|min:3',
+        'email' => 'required|email',
+        'password' => 'required|min:3|confirmed',
+          ]);
+              }
+
 }

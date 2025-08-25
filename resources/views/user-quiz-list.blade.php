@@ -43,6 +43,7 @@
           <ul class="flex justify-between text-center py-3 px-4">
             <li class="w-1/6">Quiz ID</li>
             <li class="w-3/6">Name</li>
+            <li class="w-3/6">Mcq Count</li>
             <li class="w-1/6">Action</li>
           </ul>
         </li>
@@ -53,8 +54,9 @@
           <ul class="flex justify-between text-center py-3 px-4 border-t border-gray-200">
             <li class="w-1/6 flex items-center justify-center font-medium">{{$key+1}}</</li>
             <li class="w-3/6 flex items-center justify-center">{{ $item->name }}</li>
+            <li class="w-3/6 flex items-center justify-center">{{ $item->mcq_count }}</li>
             <li class="w-1/6 flex items-center justify-center">
-             <a href="/start-quiz/{{$item->id}}/{{$item->name}}'," class="text-blue-500 font-bold">Attempt Quiz</a>
+             <a href="/start-quiz/{{$item->id}}/{{$item->name}}" class="text-blue-500 font-bold">Attempt Quiz</a>
             </li>
           </ul>
         </li>
