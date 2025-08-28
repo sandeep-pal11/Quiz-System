@@ -33,11 +33,21 @@
       <h1 class="text-2xl text-blue-800 font-bold">
         Good Luck
       </h1>
-
-    <a href="/user-signup" 
+   @if (session('user'))
+      <a href="" 
    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition inline-block">
-   Login / SignUp to Start Quiz
+   Start Quiz
    </a>
+   @else
+    <a href="/user-quiz-start" 
+   class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition inline-block">
+   SignUp to Start Quiz
+   </a>
+    <a href="/user-login-quiz" 
+   class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition inline-block">
+   Login to Start Quiz
+   </a>
+   @endif
 
     </div>
 

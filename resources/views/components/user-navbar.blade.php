@@ -28,12 +28,21 @@
         <a href="/categories" class="text-gray-700 hover:text-blue-500 transition duration-200">
           Categories
         </a>
-        <a href="/login" class="text-gray-700 hover:text-blue-500 transition duration-200">
+        @if(session('user'))
+        <a href="" class="text-gray-700 hover:text-blue-500 transition duration-200">
+          Welcome,{{session('user')->name}}
+        </a>
+        <a href="/user-logout" class="text-gray-700 hover:text-blue-500 transition duration-200">
+          Logout
+        </a>
+        @else
+        <a href="/user-login" class="text-gray-700 hover:text-blue-500 transition duration-200">
           Login
         </a>
         <a href="/user-signup" class="text-gray-700 hover:text-blue-500 transition duration-200">
           Sign-Up
         </a>
+        @endif
         <a href="/blog" class="text-gray-700 hover:text-blue-500 transition duration-200">
           Blog
         </a>

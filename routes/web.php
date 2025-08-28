@@ -23,3 +23,8 @@ Route::get('/user-quiz-list/{id}/{category}', [UserController::class,'userquizli
 Route::get('/start-quiz/{id}/{name}', [UserController::class,'startquiz']);
 Route::view('/user-signup','user-signup');
 Route::Post('/user-signup', [UserController::class,'usersignup']);
+Route::get('/user-logout', [UserController::class,'userlogout']);
+Route::get('/user-quiz-start', [UserController::class,'quizstart']);
+Route::view('/user-login','user-login');
+Route::Post('/user-login', [UserController::class,'userlogin']);
+Route::get('/user-login-quiz', [UserController::class,'userloginquiz']);

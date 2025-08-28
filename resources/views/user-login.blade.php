@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>User Sign-Up</title>
+    <title>User Login</title>
 
     <!-- Bootstrap & FontAwesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -38,14 +38,14 @@
     <!-- Navbar -->
     <x-user-navbar></x-user-navbar>
 
-    <!-- Sign-Up Section -->
+    <!-- login-Up Section -->
     <section class="vh-100 d-flex align-items-center">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-6 col-lg-5">
             <div class="card p-4">
               <div class="card-body text-center">
-                <h3 class="mb-4">User Sign-Up</h3>
+                <h3 class="mb-4">User Login</h3>
 
                 {{-- Global Sign-Up Error --}}
                 @if ($errors->has('login_error'))
@@ -54,24 +54,9 @@
                   </div>
                 @endif
 
-                <form action="{{ url('/user-signup') }}" method="POST">
+                <form action="{{ url('/user-login') }}" method="POST">
                   @csrf
-
-                  {{-- Username --}}
-                  <div class="form-floating mb-3">
-                    <input type="text" 
-                           class="form-control @error('username') is-invalid @enderror" 
-                           id="name" 
-                           name="name" 
-                           placeholder="Enter username" 
-                           value="{{ old('name') }}">
-                    <label for="username"><i class="fas fa-user me-2"></i>Username</label>
-                    @error('name')
-                      <div class="text-danger text-start small">{{ $message }}</div>
-                    @enderror
-                  </div>
-
-                  {{-- Email --}}
+                 {{-- Email --}}
                   <div class="form-floating mb-3">
                     <input type="email" 
                            class="form-control @error('email') is-invalid @enderror" 
@@ -98,26 +83,13 @@
                     @enderror
                   </div>
 
-                  {{-- Confirm Password --}}
-                  <div class="form-floating mb-3">
-                    <input type="password" 
-                           class="form-control @error('password_confirmation') is-invalid @enderror" 
-                           id="password_confirmation" 
-                           name="password_confirmation" 
-                           placeholder="Confirm password">
-                    <label for="password_confirmation"><i class="fas fa-lock me-2"></i>Confirm Password</label>
-                    @error('password_confirmation')
-                      <div class="text-danger text-start small">{{ $message }}</div>
-                    @enderror
-                  </div>
-
                   {{-- Remember Me --}}
                   <div class="form-check text-start mb-3">
                     <input class="form-check-input" type="checkbox" id="rememberMe">
                     <label class="form-check-label" for="rememberMe">Remember me</label>
                   </div>
 
-                  <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                  <button type="submit" class="btn btn-primary w-100">Login</button>
                 </form>
               </div>
             </div>

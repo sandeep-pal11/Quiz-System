@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class footer-user extends Component
+class FooterUser extends Component
 {
     /**
      * Create a new component instance.
@@ -24,3 +24,4 @@ class footer-user extends Component
         return view('components.footer-user');
     }
 }
+
